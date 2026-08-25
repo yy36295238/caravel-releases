@@ -1,0 +1,107 @@
+name: 发布 Caravel macOS 开发者版
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "私有源码仓库中要构建的版本 tag，例如 v0.1.94"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  NPM_CONFIG_REGISTRY: https://registry.npmjs.org
+
+jobs:
+  release:
+    if: startsWith(inputs.tag, 'v')
+    runs-on: macos-latest
+    steps:
+      - name: 读取私有源码
+        uses: actions/checkout@v4
+        with:
+          repository: yy36295238/caravel
+          ref: ${{ inputs.tag }}
+          ssh-key: ${{ secrets.CARAVEL_SOURCE_DEPLOY_KEY }}
+
+      - name: 安装 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 安装 Rust 双架构目标
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - name: Rust 编译缓存
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+          key: public-macos-full
+
+      - name: 校验版本配置
+        run: |
+          node scripts/edition.mjs --check
+          test "$(node -p "require('./package.json').version")" = "${{ inputs.tag }}" || \
+            test "v$(node -p "require('./package.json').version")" = "${{ inputs.tag }}"
+
+      - name: 安装依赖
+        run: |
+          npm ci
+          cd feishu-bridge
+          npm ci
+          cd ..
+          bash scripts/prune-bridge.sh
+
+      - name: 计算签名发行参数
+        id: edition
+        run: |
+          node scripts/edition.mjs full --tauri-config-file /tmp/tauri.release.json --updater
+          echo "target=$(node scripts/edition.mjs full --target)" >> "$GITHUB_OUTPUT"
+          FEAT=$(node scripts/edition.mjs full --cargo-features)
+          if [ -n "$FEAT" ]; then
+            echo "feat_arg=-f $FEAT" >> "$GITHUB_OUTPUT"
+          else
+            echo "feat_arg=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 构建并发布 DMG 与自动更新包
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          CARAVEL_EDITION: full
+        with:
+          args: >-
+            --target ${{ steps.edition.outputs.target }}
+            --config /tmp/tauri.release.json
+            ${{ steps.edition.outputs.feat_arg }}
+            -- --no-default-features
+          tagName: ${{ inputs.tag }}
+          releaseName: "Caravel ${{ inputs.tag }}"
+          releaseBody: |
+            Caravel macOS 通用开发者内测版，Apple Silicon 与 Intel 均可使用。
+
+            - `.dmg` 用于首次安装或手动更新。
+            - `.app.tar.gz`、`.sig`、`latest.json` 用于应用内自动更新。
+            - 当前未使用 Apple Developer ID 签名或公证，首次打开可能需要手动解除隔离属性。
+          releaseDraft: false
+          prerelease: false
+          includeUpdaterJson: true
+
+      - name: 刷新固定更新清单
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MANIFEST=$(find src-tauri/target -name latest.json -print -quit)
+          test -n "$MANIFEST"
+          if gh release view updater-full --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit updater-full --repo "$GITHUB_REPOSITORY" --prerelease --latest=false
+          else
+            gh release create updater-full --repo "$GITHUB_REPOSITORY" --title "完整版自动更新清单" --notes "应用自动更新入口，请勿手动下载。" --prerelease
+          fi
+          gh release upload updater-full "$MANIFEST#latest.json" --repo "$GITHUB_REPOSITORY" --clobber
