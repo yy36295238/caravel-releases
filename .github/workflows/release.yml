@@ -1,4 +1,5 @@
 name: 发布 Caravel macOS 开发者版
+run-name: Caravel ${{ inputs.tag }}
 
 on:
   workflow_dispatch:
