@@ -38,7 +38,7 @@ jobs:
       - name: 安装 Node
         uses: actions/setup-node@v4
         with:
-          # Node 22/24 在部分 runner 上会让 npm ci 触发 "Exit handler never called"；20.19.5 不受影响。
+          # 固定 Node 20，避免构建工具随 runner 镜像升级产生兼容性波动。
           node-version: 20.19.5
 
       - name: 显示 Node 环境
@@ -63,11 +63,13 @@ jobs:
 
       - name: 安装依赖
         run: |
-          # npm ci 在部分 macOS runner 会误报成功但漏装 .bin，npm install 是 npm/cli 官方 issue 给出的规避方式。
-          npm install --include=dev --no-audit --no-fund
+          # macOS runner 上 npm 会触发 "Exit handler never called"，改用 pnpm 的 hoisted 布局保持打包目录兼容。
+          corepack enable
+          corepack prepare pnpm@9.15.9 --activate
+          pnpm install --no-frozen-lockfile --node-linker=hoisted
           test -x node_modules/.bin/tauri
           cd feishu-bridge
-          npm install --no-audit --no-fund
+          pnpm install --no-frozen-lockfile --node-linker=hoisted
           cd ..
           bash scripts/prune-bridge.sh
 
@@ -156,10 +158,12 @@ jobs:
       - name: 安装依赖
         shell: bash
         run: |
-          npm install --include=dev --no-audit --no-fund
+          corepack enable
+          corepack prepare pnpm@9.15.9 --activate
+          pnpm install --no-frozen-lockfile --node-linker=hoisted
           test -x node_modules/.bin/tauri
           cd feishu-bridge
-          npm install --no-audit --no-fund
+          pnpm install --no-frozen-lockfile --node-linker=hoisted
           cd ..
           bash scripts/prune-bridge.sh
 
