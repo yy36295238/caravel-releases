@@ -63,9 +63,11 @@ jobs:
 
       - name: 安装依赖
         run: |
-          npm ci
+          # npm ci 在部分 macOS runner 会误报成功但漏装 .bin，npm install 是 npm/cli 官方 issue 给出的规避方式。
+          npm install --include=dev --no-audit --no-fund
+          test -x node_modules/.bin/tauri
           cd feishu-bridge
-          npm ci
+          npm install --no-audit --no-fund
           cd ..
           bash scripts/prune-bridge.sh
 
@@ -154,9 +156,10 @@ jobs:
       - name: 安装依赖
         shell: bash
         run: |
-          npm ci
+          npm install --include=dev --no-audit --no-fund
+          test -x node_modules/.bin/tauri
           cd feishu-bridge
-          npm ci
+          npm install --no-audit --no-fund
           cd ..
           bash scripts/prune-bridge.sh
 
