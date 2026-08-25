@@ -1,4 +1,4 @@
-name: 发布 Caravel macOS 开发者版
+name: 发布 Caravel 桌面开发者版
 run-name: Caravel ${{ inputs.tag }}
 
 on:
@@ -8,6 +8,14 @@ on:
         description: "私有源码仓库中要构建的版本 tag，例如 v0.1.94"
         required: true
         type: string
+      platform:
+        description: "构建平台；补包时可只选 Windows"
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - windows
 
 permissions:
   contents: write
@@ -16,8 +24,8 @@ env:
   NPM_CONFIG_REGISTRY: https://registry.npmjs.org
 
 jobs:
-  release:
-    if: startsWith(inputs.tag, 'v')
+  release-macos:
+    if: startsWith(inputs.tag, 'v') && inputs.platform != 'windows'
     runs-on: macos-latest
     steps:
       - name: 读取私有源码
@@ -106,3 +114,71 @@ jobs:
             gh release create updater-full --repo "$GITHUB_REPOSITORY" --title "完整版自动更新清单" --notes "应用自动更新入口，请勿手动下载。" --prerelease
           fi
           gh release upload updater-full "$MANIFEST#latest.json" --repo "$GITHUB_REPOSITORY" --clobber
+
+  release-windows:
+    # 默认等 macOS Release 创建完成再补 Windows；windows 模式用于已有 Release 的单独补包。
+    needs: release-macos
+    if: always() && startsWith(inputs.tag, 'v') && (inputs.platform == 'windows' || needs.release-macos.result == 'success')
+    runs-on: windows-latest
+    steps:
+      - name: 读取私有源码
+        uses: actions/checkout@v4
+        with:
+          repository: yy36295238/caravel
+          ref: ${{ inputs.tag }}
+          ssh-key: ${{ secrets.CARAVEL_SOURCE_DEPLOY_KEY }}
+
+      - name: 安装 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 安装 Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Rust 编译缓存
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+          key: public-windows-full
+
+      - name: 安装依赖
+        shell: bash
+        run: |
+          npm ci
+          cd feishu-bridge
+          npm ci
+          cd ..
+          bash scripts/prune-bridge.sh
+
+      - name: 计算 Windows 构建参数
+        id: edition
+        shell: bash
+        run: |
+          node scripts/edition.mjs full --tauri-config-file tauri.windows.json
+          FEAT=$(node scripts/edition.mjs full --cargo-features)
+          if [ -n "$FEAT" ]; then
+            echo "feat_arg=-f $FEAT" >> "$GITHUB_OUTPUT"
+          else
+            echo "feat_arg=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 构建并发布 Windows NSIS
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CARAVEL_EDITION: full
+        with:
+          args: >-
+            --target x86_64-pc-windows-msvc
+            --bundles nsis
+            --config tauri.windows.json
+            ${{ steps.edition.outputs.feat_arg }}
+            -- --no-default-features
+          tagName: ${{ inputs.tag }}
+          releaseName: "Caravel ${{ inputs.tag }}"
+          releaseDraft: false
+          prerelease: false
+          includeUpdaterJson: false
