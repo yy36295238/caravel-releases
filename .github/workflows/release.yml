@@ -40,6 +40,10 @@ jobs:
         with:
           node-version: 22
 
+      # runner 跟随 Node 自动升级的 npm 曾在 npm ci 收尾阶段触发 "Exit handler never called"，固定稳定版避免漂移。
+      - name: 固定 npm 版本
+        run: npm install --global npm@10.9.4
+
       - name: 安装 Rust 双架构目标
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -132,6 +136,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: 固定 npm 版本
+        run: npm install --global npm@10.9.4
 
       - name: 安装 Rust
         uses: dtolnay/rust-toolchain@stable
