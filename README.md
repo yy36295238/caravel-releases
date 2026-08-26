@@ -11,6 +11,8 @@ Local-first macOS control center for AI coding agents.
 <p>
   <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 macOS 最新版</strong></a>
   ·
+  <a href="docs/product-overview.md">产品功能说明</a>
+  ·
   <a href="https://github.com/yy36295238/caravel-releases/releases">查看版本记录</a>
 </p>
 
