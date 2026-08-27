@@ -4,7 +4,7 @@
 
 ### 本地优先的多 AI 编程 Agent 指挥台
 
-把散落在终端里的 **Claude Code、Codex 和 OpenCode** 变成可派发、可追踪、可对话、可验收的任务工作流。
+把散落在终端里的 **Claude Code、Codex、OpenCode、pi 和 Grok** 变成可派发、可追踪、可对话、可验收的任务工作流。
 
 Local-first macOS control center for AI coding agents.
 
@@ -19,7 +19,7 @@ Local-first macOS control center for AI coding agents.
 ![Latest Release](https://img.shields.io/github/v/release/yy36295238/caravel-releases?display_name=tag&style=flat-square&label=release&color=1677ff)
 ![macOS](https://img.shields.io/badge/macOS-Apple%20Silicon%20%7C%20Intel-111111?style=flat-square&logo=apple)
 ![Local First](https://img.shields.io/badge/data-local--first-22a06b?style=flat-square)
-![Agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20OpenCode-7c3aed?style=flat-square)
+![Agents](https://img.shields.io/badge/agents-5%20supported-7c3aed?style=flat-square)
 
 ![Caravel](docs/caravel-demo.gif)
 
@@ -36,7 +36,7 @@ Caravel 在现有 Agent CLI 和代码编辑器之上增加一个桌面任务层�
 一个 Agent，从目标派发、运行监控、多轮对话到代码 diff 验收，都在同一个工作台中完成。
 
 > **Caravel 不替代你的 Agent、模型或 IDE。** 你仍然使用自己的 Claude Code、Codex、
-> OpenCode 与编辑器；Caravel 负责把多个 Agent 和多个项目组织成清晰、可控的工作流。
+> OpenCode、pi、Grok 与编辑器；Caravel 负责把多个 Agent 和多个项目组织成清晰、可控的工作流。
 
 ## 一条完整的 AI 编程工作流
 
@@ -48,7 +48,7 @@ Caravel 在现有 Agent CLI 和代码编辑器之上增加一个桌面任务层�
 
 | 能力 | 你能得到什么 |
 |---|---|
-| **多 Agent 统一管理** | 在一个工作台中使用 Claude Code、Codex 和 OpenCode，按任务选择最合适的 Agent。 |
+| **多 Agent 统一管理** | 在一个工作台中使用 Claude Code、Codex、OpenCode、pi 和 Grok，按任务选择最合适的 Agent。 |
 | **任务状态实时追踪** | 集中查看运行中、待确认、待验收、已完成和失败任务，快速发现卡点。 |
 | **多轮对话与会话续接** | 保留任务上下文，继续向同一个 Agent 补充要求、纠正方向或追问结果。 |
 | **工作区与隔离运行** | 任务绑定 Git 仓库或文件夹，可直接运行，也可使用隔离副本或独立分支。 |
@@ -60,8 +60,8 @@ Caravel 在现有 Agent CLI 和代码编辑器之上增加一个桌面任务层�
 ## 适合谁？
 
 - 同时维护多个项目，希望并行安排 AI 编程任务的开发者。
-- 经常在 Claude Code、Codex、OpenCode 之间切换，希望统一管理会话的人。
-- 希望把 AI 编程从“开终端聊天”升级为可追踪、可审查任务流程的团队或个人。
+- 经常在不同 Agent 之间切换，希望统一管理会话的人。
+- 希望把 AI 编程从“开终端聊天”升级为可追踪、可审查任务流程的个人开发者或技术负责人。
 - 需要定时执行、远程查看进度，或让 Agent 在无人值守时继续工作的用户。
 
 ## 支持的 Agent
@@ -71,6 +71,8 @@ Caravel 在现有 Agent CLI 和代码编辑器之上增加一个桌面任务层�
 | **Claude Code** | 连接本机已安装并登录的 `claude` CLI |
 | **OpenAI Codex** | 连接本机已安装并登录的 `codex` CLI |
 | **OpenCode** | 连接本机已安装并登录的 `opencode` CLI |
+| **pi** | 连接本机已安装并配置的 `pi` CLI |
+| **Grok** | 连接本机已安装并登录的 `grok` CLI |
 
 Agent 的账号登录、模型选择和 API 凭据仍由各自 CLI 管理，Caravel 不接管这些敏感信息。
 
@@ -80,7 +82,7 @@ Agent 的账号登录、模型选择和 API 凭据仍由各自 CLI 管理，Cara
 
 - 一台 Apple Silicon 或 Intel Mac。
 - 已安装 Git。
-- 已安装并登录 Claude Code、Codex 或 OpenCode 中的至少一个。
+- 已安装并完成配置的受支持 Agent CLI 中的至少一个。
 
 ### 安装 Caravel
 
@@ -123,7 +125,7 @@ Caravel 可以启动本机 Agent、读写工作区并执行经过授权的命令
 <summary><strong>Caravel 是新的 AI 模型或代码编辑器吗？</strong></summary>
 
 不是。Caravel 是 AI coding agent manager / desktop control center，负责组织本机已有的
-Claude Code、Codex 和 OpenCode。你可以继续使用熟悉的 IDE、终端和模型账号。
+Claude Code、Codex、OpenCode、pi 和 Grok。你可以继续使用熟悉的 IDE、终端和模型账号。
 
 </details>
 
