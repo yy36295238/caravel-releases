@@ -21,6 +21,8 @@ Local-first macOS control center for AI coding agents.
 ![Local First](https://img.shields.io/badge/data-local--first-22a06b?style=flat-square)
 ![Agents](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex%20%7C%20OpenCode-7c3aed?style=flat-square)
 
+![Caravel](docs/caravel-demo.gif)
+
 </div>
 
 ---
