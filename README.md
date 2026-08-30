@@ -4,12 +4,16 @@
 
 ### 本地优先的多 AI 编程 Agent 指挥台
 
-把散落在终端里的 **Claude Code、Codex、OpenCode、pi 和 Grok** 变成可派发、可追踪、可对话、可验收的任务工作流。
+**一个人，也能像带团队一样推进多个项目。**
+
+把 Claude Code、Codex、OpenCode、pi 和 Grok 变成一支可调度、可追踪、可验收的 AI 执行队伍。
 
 Local-first macOS control center for AI coding agents.
 
 <p>
   <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 macOS 最新版</strong></a>
+  ·
+  <a href="docs/product-highlights.md">为什么选择 Caravel</a>
   ·
   <a href="docs/product-overview.md">产品功能说明</a>
   ·
@@ -36,7 +40,22 @@ Caravel 在现有 Agent CLI 和代码编辑器之上增加一个桌面任务层�
 一个 Agent，从目标派发、运行监控、多轮对话到代码 diff 验收，都在同一个工作台中完成。
 
 > **Caravel 不替代你的 Agent、模型或 IDE。** 你仍然使用自己的 Claude Code、Codex、
-> OpenCode、pi、Grok 与编辑器；Caravel 负责把多个 Agent 和多个项目组织成清晰、可控的工作流。
+> OpenCode、pi、Grok 与编辑器；Caravel 负责把多个 Agent 和多个项目组织成清晰、可控的工作流，让重型 IDE 在复杂场景下按需打开。
+
+## Caravel 带来的，不是“多一个工具”
+
+| 绝对亮点 | 用户获得的价值 |
+|---|---|
+| **把等待变成并行产出** | 不再串行等待一个 Agent。多个项目、多个任务同时向前推进，用户只处理真正需要确认和验收的节点。 |
+| **把“AI 完成”变成代码交付** | 目标、会话、权限、隔离运行和代码 Diff 连成闭环，最终改动是否进入项目始终由用户决定。 |
+| **把重型工具变成按需工具** | 日常派发、查文件、改配置、查数据库和审 Diff 可在 Caravel 完成，复杂调试时再进入 IDEA。 |
+| **把一次成功变成长期能力** | 提示词、经验、定时器和工作流让有效方法持续复用，而不是留在一次性聊天记录里。 |
+
+> **真正的提升不是 Agent 打字更快，而是同样一个小时，有更多工作真正完成。**
+
+Caravel macOS 通用版下载约 30 MB、基础运行内存约 170 MB。任务和工作方法本地优先保存，不绑定单一 Agent；专业工具按需打开，而不是全部长期常驻。
+
+[查看完整产品亮点 →](docs/product-highlights.md)
 
 ## 一条完整的 AI 编程工作流
 
