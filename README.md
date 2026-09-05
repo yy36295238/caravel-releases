@@ -46,11 +46,19 @@ Apple Silicon / Intel · 使用你自己的 Agent 和模型账号
 安装后支持应用内更新。任务与会话保存在本机；Agent 调用在线模型或使用外部集成时仍会联网。
 
 <details>
-<summary><strong>首次打开被 macOS 阻止？</strong></summary>
+<summary><strong>首次打开被 macOS 阻止？查看「仍要打开」和终端放行命令</strong></summary>
 
-当前公开版本尚未使用 Apple Developer ID 签名和公证。先尝试右键「打开」，或在「系统设置 → 隐私与安全性」中放行 Caravel。
+当前公开版本尚未使用 Apple Developer ID 签名和公证。确认安装包来自本仓库 Releases，并将 Caravel 放入「应用程序」后，可选择以下任一方式打开。
 
-如果仍因下载隔离被阻止，确认安装包来自本仓库 Releases，且应用已放入「应用程序」，再在终端执行：
+**方式一：在系统设置中允许打开**
+
+1. 先尝试打开一次 Caravel，让 macOS 显示阻止提示。
+2. 打开「系统设置 → 隐私与安全性」，向下找到 Caravel 被阻止的说明，点击「仍要打开」。
+3. 按提示输入 Mac 登录密码或使用 Touch ID，再点击「打开」。部分系统版本的按钮文案为「仍然打开」。
+
+**方式二：终端放行命令**
+
+打开 Mac 的「终端」，执行以下命令，再重新打开 Caravel：
 
 ```sh
 xattr -dr com.apple.quarantine /Applications/Caravel.app
