@@ -22,9 +22,9 @@
 
 Apple Silicon / Intel · 使用你自己的 Agent 和模型账号
 
-[![Caravel 工作台：全部任务、Agent 会话与代码验收](https://caravel-site.pages.dev/assets/workbench.png)](https://caravel-site.pages.dev/demo/)
+[![Caravel 工作台：全部任务、Agent 会话与代码验收](https://caravel-site.pages.dev/assets/workbench.png)](https://caravel-site.pages.dev/)
 
-**点击截图，直接体验完整工作台。**<br>
+**点击截图，访问官网并体验完整工作台。**<br>
 <sub>演示使用产品原版界面与示例数据，无需安装。</sub>
 
 </div>
