@@ -2,7 +2,7 @@
 
 ## 产品定位
 
-**Caravel 是面向多项目、多任务开发者的本地优先多 AI 编码 Agent 指挥台。当前公开版本支持 macOS，覆盖 Apple Silicon 与 Intel。**
+**Caravel 是面向多项目、多任务开发者的本地优先多 AI 编码 Agent 指挥台。当前公开版本支持 macOS，覆盖 Apple Silicon 与 Intel；另提供 Windows x64 未签名测试安装包，尚未完成实机安装运行验证，暂不支持自动更新。**
 
 它将 Claude Code、Codex、OpenCode、pi、Grok 等编码 Agent 集中到一个桌面工作台中，帮助用户统一派发任务、跟踪进度、处理授权、审查代码并完成交付。本机尚未安装的 Agent 可在设置里一键安装或升级。
 
