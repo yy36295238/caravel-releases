@@ -33,7 +33,7 @@ Apple Silicon / Intel · 使用你自己的 Agent 和模型账号
 
 - **并行派发**：给不同项目创建任务，选择 Agent，让多项工作同时推进。
 - **集中跟进**：查看执行状态，接续会话，在需要时确认权限或调整方向。
-- **审查交付**：查看代码 Diff，继续修改，或在验收后合并。
+- **审查交付**：查看代码 Diff，继续修改，或在验收后合并、推送独立分支。
 
 我的应用、定时器、工作流和更多功能，前往 [官网查看](https://caravel-site.pages.dev/#possibilities) 或 [在线操作体验](https://caravel-site.pages.dev/demo/)。
 
