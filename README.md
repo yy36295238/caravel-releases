@@ -15,12 +15,12 @@
   &nbsp; · &nbsp;
   <a href="https://caravel-site.pages.dev/demo/"><strong>在线体验</strong></a>
   &nbsp; · &nbsp;
-  <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 macOS / Windows 版</strong></a>
+  <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 macOS 版</strong></a>
 </p>
 
 [![Latest Release](https://img.shields.io/github/v/release/yy36295238/caravel-releases?display_name=tag&style=flat-square&label=release&color=416fae)](https://github.com/yy36295238/caravel-releases/releases/latest)
 
-macOS Apple Silicon / Intel · Windows x64 · 使用你自己的 Agent 和模型账号
+macOS Apple Silicon / Intel · [Windows x64 测试包](https://github.com/yy36295238/caravel-releases/releases/tag/v20260906.0.2) · 使用你自己的 Agent 和模型账号
 
 [![Caravel 工作台：全部任务、Agent 会话与代码验收](https://caravel-site.pages.dev/assets/workbench.png)](https://caravel-site.pages.dev/)
 
@@ -39,7 +39,7 @@ macOS Apple Silicon / Intel · Windows x64 · 使用你自己的 Agent 和模型
 
 ## 开始使用
 
-1. [下载安装包](https://github.com/yy36295238/caravel-releases/releases/latest)：macOS 打开 `.dmg`，将 **Caravel** 拖入「应用程序」；Windows x64 下载并运行 `Caravel_*_x64-setup.exe`。
+1. [下载安装包](https://github.com/yy36295238/caravel-releases/releases/latest)：macOS 打开 `.dmg`，将 **Caravel** 拖入「应用程序」；Windows x64 从 [Windows 测试版](https://github.com/yy36295238/caravel-releases/releases/tag/v20260906.0.2) 下载并运行 `Caravel_*_x64-setup.exe`。
 2. 准备 Git 和至少一个已安装、完成登录或配置的受支持 Agent CLI。
 3. 添加本地项目，创建任务，选择 Agent 并开始运行。
 
