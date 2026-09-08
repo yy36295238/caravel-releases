@@ -15,12 +15,12 @@
   &nbsp; · &nbsp;
   <a href="https://caravel-site.pages.dev/demo/"><strong>在线体验</strong></a>
   &nbsp; · &nbsp;
-  <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 macOS 版</strong></a>
+  <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 Caravel</strong></a>
 </p>
 
 [![Latest Release](https://img.shields.io/github/v/release/yy36295238/caravel-releases?display_name=tag&style=flat-square&label=release&color=416fae)](https://github.com/yy36295238/caravel-releases/releases/latest)
 
-macOS Apple Silicon / Intel · [Windows x64 测试包](https://github.com/yy36295238/caravel-releases/releases) · 使用你自己的 Agent 和模型账号
+macOS（Apple Silicon / Intel）与 Windows x64 · 使用你自己的 Agent 和模型账号
 
 [![Caravel 工作台：全部任务、Agent 会话与代码验收](https://caravel-site.pages.dev/assets/workbench.png)](https://caravel-site.pages.dev/)
 
@@ -39,11 +39,11 @@ macOS Apple Silicon / Intel · [Windows x64 测试包](https://github.com/yy3629
 
 ## 开始使用
 
-1. [下载安装包](https://github.com/yy36295238/caravel-releases/releases/latest)：macOS 打开 `.dmg`，将 **Caravel** 拖入「应用程序」；Windows x64 从 [Windows 测试版](https://github.com/yy36295238/caravel-releases/releases) 下载并运行 `Caravel_*_x64-setup.exe`。
+1. [下载安装包](https://github.com/yy36295238/caravel-releases/releases/latest)：macOS 打开 `.dmg`，将 **Caravel** 拖入「应用程序」；Windows x64 下载并运行 `Caravel_*_x64-setup.exe`。
 2. 准备 Git 和至少一个已安装、完成登录或配置的受支持 Agent CLI。
 3. 添加本地项目，创建任务，选择 Agent 并开始运行。
 
-macOS 与 Windows 同版本分阶段发布，Windows 安装包可能稍后补齐，请以各版本附件为准。macOS 支持应用内更新。Windows 当前提供未签名测试安装包，已通过 CI 构建检查，尚未完成实机安装运行验证，暂不支持应用内更新；安装前准备 Git for Windows、Node.js 和 Agent CLI。任务与会话保存在本机；Agent 调用在线模型或使用外部集成时仍会联网。
+macOS 与 Windows 均提供包含全部功能模块的 Caravel 通用版。macOS 支持应用内自动更新；Windows 更新时下载并运行新版安装包，安装前准备 Git for Windows、Node.js 和 Agent CLI。Windows 安装包尚未签名，如遇 SmartScreen 提示，确认来自本仓库 Releases 后，点击「更多信息 → 仍要运行」。任务与会话保存在本机；Agent 调用在线模型或使用外部集成时仍会联网。
 
 <details>
 <summary><strong>首次打开被 macOS 阻止？查看「仍要打开」和终端放行命令</strong></summary>
@@ -70,6 +70,6 @@ xattr -dr com.apple.quarantine /Applications/Caravel.app
 
 ---
 
-本仓库提供 **macOS 安装包、Windows x64 测试安装包与版本记录**。产品介绍、交互演示与常见问题请以 [官网](https://caravel-site.pages.dev/) 为主。
+本仓库提供 **macOS / Windows 安装包与版本记录**。产品介绍、交互演示与常见问题请以 [官网](https://caravel-site.pages.dev/) 为主。
 
 [版本记录](https://github.com/yy36295238/caravel-releases/releases) · [完整功能说明](docs/product-overview.md) · [常见问题](https://caravel-site.pages.dev/#faq)
