@@ -1,5 +1,7 @@
 # 一个人，也能像带团队一样推进多个项目
 
+[English](product-highlights.en.md) · **简体中文**
+
 > **把等待 AI 的时间，变成真正的并行产出。**
 
 Caravel 不是又一个 AI 聊天窗口，也不只是多个 Agent 的启动器。它把 Claude Code、Codex、OpenCode、pi 和 Grok 组织成一支可调度、可追踪、可干预、可验收的执行队伍。

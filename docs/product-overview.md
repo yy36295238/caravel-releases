@@ -1,5 +1,7 @@
 # Caravel 产品介绍与功能说明
 
+[English](product-overview.en.md) · **简体中文**
+
 ## 产品定位
 
 **Caravel 是面向多项目、多任务开发者的本地优先多 AI 编码 Agent 指挥台。支持 macOS（Apple Silicon / Intel）与 Windows x64。**
