@@ -1,32 +1,25 @@
-<div align="center">
-
-**Claude Code · Codex · OpenCode · pi · Grok**
+# <img src="https://caravel-site.pages.dev/assets/icon.png" width="32" height="32" alt="Caravel"> Caravel
 
 <p>
-  <a href="https://caravel-site.pages.dev/?lang=zh-CN"><strong>访问官网 ↗</strong></a>
-  &nbsp; · &nbsp;
-  <a href="https://caravel-site.pages.dev/demo/?lang=zh-CN"><strong>在线体验</strong></a>
-  &nbsp; · &nbsp;
   <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 Caravel</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://caravel-site.pages.dev/demo/?lang=zh-CN">在线体验</a>
+  &nbsp; · &nbsp;
+  <a href="https://caravel-site.pages.dev/?lang=zh-CN">访问官网</a>
+  &nbsp; · &nbsp;
+  <a href="README.md">English</a> / <strong>简体中文</strong>
 </p>
 
-[![Latest Release](https://img.shields.io/github/v/release/yy36295238/caravel-releases?display_name=tag&style=flat-square&label=release&color=416fae)](https://github.com/yy36295238/caravel-releases/releases/latest)
-
-macOS（Apple Silicon / Intel）与 Windows x64 · 使用你自己的 Agent 和模型账号
-
-[English](README.md) · **简体中文**
-
-<img src="https://caravel-site.pages.dev/assets/icon.png" width="64" height="64" alt="Caravel">
-
-# Caravel
-
-### 少一点工具切换，多一点真正的创造。
-
+**少一点工具切换，多一点真正的创造。**<br>
 本地优先的多 AI 编码 Agent 工作台。你定目标，Agent 并行推进，结果由你验收。
 
-![Caravel 工作旅程：从 Agent 接入、任务并行到结果交付与经验沉淀](https://raw.githubusercontent.com/yy36295238/caravel-releases/main/docs/assets/caravel-story-zh-CN.png)
+<p>
+  <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><img src="https://img.shields.io/github/v/release/yy36295238/caravel-releases?display_name=tag&style=flat-square&label=release&color=416fae" alt="最新版本"></a>
+  &nbsp; <sub>macOS（Apple Silicon / Intel）与 Windows x64</sub><br>
+  <sub>Claude Code · Codex · OpenCode · pi · Grok · 使用你自己的 Agent 和模型账号</sub>
+</p>
 
-</div>
+![Caravel 工作旅程：从 Agent 接入、任务并行到结果交付与经验沉淀](https://raw.githubusercontent.com/yy36295238/caravel-releases/main/docs/assets/caravel-story-zh-CN.png)
 
 ## 当你手上不止一件事
 
