@@ -24,6 +24,8 @@
 
 macOS（Apple Silicon / Intel）与 Windows x64 · 使用你自己的 Agent 和模型账号
 
+![Caravel 工作旅程：从 Agent 接入、任务并行到结果交付与经验沉淀](https://raw.githubusercontent.com/yy36295238/caravel-releases/main/docs/assets/caravel-story-zh-CN.png)
+
 [![Caravel 工作台：全部任务、Agent 会话与代码验收](https://caravel-site.pages.dev/assets/workbench-zh-CN.png)](https://caravel-site.pages.dev/?lang=zh-CN)
 
 **点击截图，访问官网并体验完整工作台。**<br>
