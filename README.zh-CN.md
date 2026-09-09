@@ -1,4 +1,4 @@
-# <img src="https://caravel-site.pages.dev/assets/icon.png" width="32" height="32" alt="Caravel"> Caravel
+# Caravel
 
 <p>
   <a href="https://github.com/yy36295238/caravel-releases/releases/latest"><strong>下载 Caravel</strong></a>
