@@ -47,7 +47,9 @@ Create and manage AI agent tasks with list, board, and split views.
 
 - Manage Claude Code, Codex, OpenCode, pi, and Grok together.
 - Conversations, permissions, plans, subagent progress, code diffs, and delivery share one page.
-- Stream assistant replies as they arrive to follow reasoning and output exposed by the agent.
+- Display assistant replies at a steady pace and finish showing pending text after the reply is finalized; follow reasoning and tool activity exposed by the agent.
+- Choose a model and reasoning effort for a new task, a continuation, or a conversation fork. Defaults follow model settings. Manage models in Agent settings; historical tasks retain their existing model selection.
+- Scrolling toward the top loads earlier messages while preserving your reading position, including task quick previews and mobile task details.
 - Long task descriptions can be summarized into short titles asynchronously by the selected agent and model. Execution continues; the original name remains while generation runs. Desktop, web, and mobile details show generation status. Full goals and manual names are preserved, and failure keeps the original name.
 - Link several workspaces to a task and view directly or indirectly related tasks.
 - Separate-branch tasks can create an isolated copy for each Git project, with per-project remote main/master baselines and development branches. Add projects, inspect connection status, browse files, and use Git from the task’s project panel.
@@ -63,7 +65,7 @@ Keep and find historical tasks in one place.
 - Filter by status, agent, workspace, date, and related tasks.
 - Search, favorite, archive, and group tasks.
 - Search sidebar workspaces by name or path. Matching groups expand temporarily; clearing the search restores their previous state.
-- Import existing agent sessions into the task library.
+- Import existing agent sessions into the task library. Codex supports both older and newer session formats. Rebuilding preserves image attachments and reply ratings; incomplete parsing or failed writes retain the original conversation.
 - Open workspaces and manage Git branches, commits, pushes, and conflicts.
 - Commit only selected files while preserving unselected staged changes and tracked-file deletions. Task headers show the branch and changed-file count.
 - Generate commit messages with AI or reuse earlier messages. Additional instructions stay available when their section is collapsed. Choose commit or commit-and-push after generation; the dialog does not delegate the Git operation to an agent.
@@ -180,6 +182,7 @@ Manage preferences and the execution environment.
 - **Terminal**: choose the default terminal for opening shells or taking over agent sessions.
 - **Appearance and language**: themes, task animations, and zoom. Choose Simplified Chinese, English, or system language. Desktop windows synchronize; browser and mobile clients store their own preference. The desktop app retains Chinese when unset. User content, code, and history stay in their original language.
 - **Language coverage**: workbench, Git, editor, databases, workflows, schedules, personal tools, insights, reviews, tray, fixed tool-window titles, notifications, and Feishu remote-control text. Built-in AI assistance defaults to the interface language and respects an explicitly requested language.
+- **Error recovery**: retry or reload failed pages. The main window can return home; tool windows recover their current page. Action errors keep the current interface visible with a dismissible notice. Save unsaved input before reloading.
 - **Feature management**: show, hide, and reorder sidebar entries.
 - **Skills**: inspect skills and MCP tools for different agents.
 - **Remote control**: configure Feishu, intelligent conversations, and message history.
