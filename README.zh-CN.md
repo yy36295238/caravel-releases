@@ -33,6 +33,8 @@ macOS（Apple Silicon / Intel）与 Windows x64 · 使用你自己的 Agent 和�
 
 ## 从目标，到交付
 
+![Caravel 工作旅程：从 Agent 接入、任务并行到结果交付与经验沉淀](https://raw.githubusercontent.com/yy36295238/caravel-releases/main/docs/assets/caravel-story-zh-CN.png)
+
 - **并行派发**：给不同项目创建任务，选择 Agent，让多项工作同时推进。
 - **集中跟进**：查看执行状态，接续会话，在需要时确认权限或调整方向。
 - **审查交付**：查看代码 Diff，继续修改，或在验收后合并、推送独立分支。
