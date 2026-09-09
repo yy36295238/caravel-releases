@@ -1,17 +1,5 @@
 <div align="center">
 
-[English](README.md) · **简体中文**
-
-<img src="https://caravel-site.pages.dev/assets/icon.png" width="64" height="64" alt="Caravel">
-
-# Caravel
-
-### 少一点工具切换，多一点真正的创造。
-
-本地优先的多 AI 编码 Agent 工作台。你定目标，Agent 并行推进，结果由你验收。
-
-![Caravel 工作旅程：从 Agent 接入、任务并行到结果交付与经验沉淀](https://raw.githubusercontent.com/yy36295238/caravel-releases/main/docs/assets/caravel-story-zh-CN.png)
-
 **Claude Code · Codex · OpenCode · pi · Grok**
 
 <p>
@@ -25,6 +13,18 @@
 [![Latest Release](https://img.shields.io/github/v/release/yy36295238/caravel-releases?display_name=tag&style=flat-square&label=release&color=416fae)](https://github.com/yy36295238/caravel-releases/releases/latest)
 
 macOS（Apple Silicon / Intel）与 Windows x64 · 使用你自己的 Agent 和模型账号
+
+[English](README.md) · **简体中文**
+
+<img src="https://caravel-site.pages.dev/assets/icon.png" width="64" height="64" alt="Caravel">
+
+# Caravel
+
+### 少一点工具切换，多一点真正的创造。
+
+本地优先的多 AI 编码 Agent 工作台。你定目标，Agent 并行推进，结果由你验收。
+
+![Caravel 工作旅程：从 Agent 接入、任务并行到结果交付与经验沉淀](https://raw.githubusercontent.com/yy36295238/caravel-releases/main/docs/assets/caravel-story-zh-CN.png)
 
 </div>
 
