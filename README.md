@@ -10,7 +10,7 @@
 
 A local-first workspace for multiple AI coding agents. Projects, tasks, conversations, and code reviews in one place.
 
-**Claude Code · Codex · OpenCode · pi · Grok**
+**Claude Code · Codex · OpenCode · pi · Grok · TRAE**
 
 <p>
   <a href="https://caravel-site.pages.dev/?lang=en"><strong>Visit website ↗</strong></a>
@@ -22,7 +22,7 @@ A local-first workspace for multiple AI coding agents. Projects, tasks, conversa
 
 [![Latest Release](https://img.shields.io/github/v/release/yy36295238/caravel-releases?display_name=tag&style=flat-square&label=release&color=416fae)](https://github.com/yy36295238/caravel-releases/releases/latest)
 
-macOS (Apple Silicon / Intel) and Windows x64 · Use your own agent and model accounts
+macOS (Apple Silicon / Intel) and Windows x64 · Use your own agent and model accounts<br>TRAE requires CLI 2.0 and an Enterprise Flagship account.
 
 [![Caravel workbench: tasks, agent conversations, and code review](https://caravel-site.pages.dev/assets/workbench-en.png)](https://caravel-site.pages.dev/?lang=en)
 
