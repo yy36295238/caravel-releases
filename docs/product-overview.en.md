@@ -69,7 +69,7 @@ Keep and find historical tasks in one place.
 - Import and synchronize existing agent sessions, including native and officially migrated TRAE CLI 2.0 sessions. Codex supports both older and newer session formats. Rebuilding preserves image attachments and reply ratings; incomplete parsing or failed writes retain the original conversation while reconciling run status separately. Manual sync reports incomplete conversation updates; historical runs do not overwrite the current task status.
 - Open workspaces and manage Git branches, commits, pushes, and conflicts. Remove separate-branch entries even when their local copy is missing. Cleaned projects with missing directories are hidden while tasks and recovery information remain available.
 - Commit only selected files while preserving unselected staged changes and tracked-file deletions. Task headers show the branch and changed-file count.
-- Generate commit messages with AI or reuse earlier messages. Additional instructions stay available when their section is collapsed. Without selected skills, choose commit or commit-and-push after generation. Select skills for the current agent to execute their actions with your instructions in the target repository, stop execution, review the report, and refresh Git status.
+- Choose a model and generate a commit message directly in the commit dialog, edit the draft, then commit or commit and push. Generated summaries use a type prefix by default and prioritize explicit formatting instructions. Additional instructions stay available when collapsed; search and reuse the latest 20 entries shared across repositories on this machine.
 
 ### 3. Schedules
 
@@ -101,7 +101,7 @@ Browse, search, and edit project files.
 Connect to MySQL, PostgreSQL, SQLite, MongoDB, or Redis to query and edit data.
 
 - Browse objects, filter and page through data, open local SQLite files, query MongoDB documents, and manage Redis keys.
-- Write SQL or document queries, inspect and edit results, and export complete results, including SQL output.
+- Write SQL or document queries, inspect and edit results, and export complete results, including SQL output. For editable results, cell and row-detail value dialogs let you edit raw text, set NULL, and stage changes for confirmation and submission in the results panel.
 - Resize result columns by dragging or keyboard; hidden columns and horizontal scrolling retain correct field positions.
 - Generate, explain, optimize, and repair queries with a conversational SQL Copilot.
 - Save queries, use parameters, and inspect execution history and object definitions.
