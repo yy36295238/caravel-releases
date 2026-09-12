@@ -69,7 +69,7 @@ Keep and find historical tasks in one place.
 - Import and synchronize existing agent sessions, including native and officially migrated TRAE CLI 2.0 sessions. Codex supports both older and newer session formats. Rebuilding preserves image attachments and reply ratings; incomplete parsing or failed writes retain the original conversation while reconciling run status separately. Manual sync reports incomplete conversation updates; historical runs do not overwrite the current task status.
 - Open workspaces and manage Git branches, commits, pushes, and conflicts. Remove separate-branch entries even when their local copy is missing. Cleaned projects with missing directories are hidden while tasks and recovery information remain available.
 - Commit only selected files while preserving unselected staged changes and tracked-file deletions. Task headers show the branch and changed-file count.
-- Generate commit messages with AI or reuse earlier messages. Additional instructions stay available when their section is collapsed. Choose commit or commit-and-push after generation; the dialog does not delegate the Git operation to an agent.
+- Generate commit messages with AI or reuse earlier messages. Additional instructions stay available when their section is collapsed. Without selected skills, choose commit or commit-and-push after generation. Select skills for the current agent to execute their actions with your instructions in the target repository, stop execution, review the report, and refresh Git status.
 
 ### 3. Schedules
 
@@ -108,7 +108,7 @@ Connect to MySQL, PostgreSQL, SQLite, MongoDB, or Redis to query and edit data.
 - Let agents access authorized database capabilities through MCP.
 - Confirm dangerous production operations and inspect target-table size before changes.
 - Refuse to save connection passwords when encryption fails; key errors do not silently replace the existing key.
-- Collapse connection lists. Continue Redis searches by cursor, with a clear distinction between an unfinished scan and no matches.
+- Collapse connection lists. Look up exact Redis keys directly or continue wildcard searches by cursor, with a clear distinction between an unfinished scan and no matches. Type filtering also works with Redis versions before 6.
 
 ### 6. To-dos, inbox, and clipboard
 
