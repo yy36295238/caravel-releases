@@ -45,6 +45,8 @@ Caravel turns these separate execution sessions into traceable tasks. Each task 
 
 Create and manage AI agent tasks with list, board, and split views.
 
+The filter bar groups session sync, view, and split controls under “More actions” when space is limited. In list view, press `⌘F` (`Ctrl+F` on Windows/Linux) to search the current conversation, see match counts, and navigate with `Enter / Shift+Enter`. Press `Esc` to close and clear highlights. Split views search the focused conversation; embedded workflow conversations support the same controls.
+
 - Manage Claude Code, Codex, OpenCode, pi, Grok, and TRAE together.
 - Conversations, permissions, plans, subagent progress, code diffs, and delivery share one page. Drag the plan card within its conversation area, adjust it with arrow keys, or press Home to reset it.
 - Display live assistant replies smoothly as chunks arrive. History, synchronized records, and web polling snapshots appear in full; returning to the window skips queued background animation. Follow reasoning and tool activity exposed by the agent.
@@ -184,6 +186,7 @@ Manage preferences and the execution environment.
 - **Installation and tools**: install or upgrade agents and supporting tools such as Git, Node, and cc-switch. Upgrades retain the detected installation source and verify runnable versions. Progress, queues, and installer guidance remain visible across menu changes. Graphical installers require completion and a refresh; batch upgrades distinguish completed, manual, and failed results.
 - **Plugins**: manage Claude, Codex, OpenCode, and TRAE plugins and select them for tasks. Check stable updates for plugins with independent GitHub repositories against each agent’s installed version and open their release pages; installed files are not overwritten automatically.
 - **Terminal**: choose the default terminal for opening shells or taking over agent sessions.
+- **macOS main window**: content extends to the top while retaining native window buttons. Drag page title bars or empty areas of the workbench filter bar and sidebar to move the window; double-click to toggle maximization. Native background and appearance follow the app theme.
 - **Appearance and language**: themes, task animations, and zoom at 80%, 90%, 100%, 110%, 125%, or 150% (100% by default). Choose Simplified Chinese, English, or system language. Desktop windows synchronize; browser and mobile clients store their own preference. The desktop app retains Chinese when unset. User content, code, and history stay in their original language.
 - **Language coverage**: workbench, Git, editor, databases, workflows, schedules, personal tools, insights, reviews, tray, fixed tool-window titles, notifications, and Feishu remote-control text. Built-in AI assistance defaults to the interface language and respects an explicitly requested language.
 - **Error recovery**: page, rendering, and startup failures offer retry or reload. The main window can return home; tool windows recover their current page. Action errors keep the interface visible, with technical reasons and stack traces written to the service log instead of a global error notice. Rust panics save a local report that is silently archived on the next launch; forced termination and native WebView crashes are outside this coverage. Save unsaved input before reloading.
