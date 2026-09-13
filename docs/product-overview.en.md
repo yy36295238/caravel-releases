@@ -6,7 +6,7 @@
 
 **Caravel is a local-first workspace for multiple AI coding agents, built for developers working across projects and tasks. It supports macOS (Apple Silicon / Intel) and Windows x64.**
 
-Both platforms provide the complete app with all feature modules and retain existing application data. macOS supports in-app updates; Windows updates use the latest installer. Choose your platform on the [download page](https://github.com/yy36295238/caravel-releases/releases/latest). See the [installation help](https://caravel-site.pages.dev/?lang=en#install-help) for first-launch instructions.
+Both platforms provide the complete app with all feature modules and retain existing application data. macOS and Windows x64 support signed in-app updates; older Windows clients require a manual upgrade to a version that supports automatic updates. Choose your platform on the [download page](https://github.com/yy36295238/caravel-releases/releases/latest). See the [installation help](https://caravel-site.pages.dev/?lang=en#install-help) for first-launch instructions.
 
 Caravel brings Claude Code, Codex, OpenCode, pi, Grok, TRAE, and other coding agents into one desktop workbench. Delegate tasks, track progress, handle permissions, review code, and deliver changes in one place. Install or upgrade agents from Settings.
 
@@ -71,6 +71,7 @@ Keep and find historical tasks in one place.
 - Import and synchronize existing agent sessions, including native and officially migrated TRAE CLI 2.0 sessions. Codex supports both older and newer session formats. Rebuilding preserves image attachments and reply ratings; incomplete parsing or failed writes retain the original conversation while reconciling run status separately. Manual sync reports incomplete conversation updates; historical runs do not overwrite the current task status.
 - Open workspaces and manage Git branches, commits, pushes, and conflicts. Remove separate-branch entries even when their local copy is missing. Cleaned projects with missing directories are hidden while tasks and recovery information remain available.
 - Commit only selected files while preserving unselected staged changes and tracked-file deletions. Task headers show the branch and changed-file count.
+- Pulling remote updates shows progress and keeps Git output, file and line-change statistics, up-to-date messages, or failure details visible until dismissed. Detected merge operations with conflicts can open the conflict resolver.
 - Choose a model and generate a commit message directly in the commit dialog, edit the draft, then commit or commit and push. Generated summaries use a type prefix by default and prioritize explicit formatting instructions. Additional instructions stay available when collapsed; search and reuse the latest 20 entries shared across repositories on this machine.
 
 ### 3. Schedules
@@ -194,7 +195,7 @@ Manage preferences and the execution environment.
 - **Skills**: inspect skills, declared versions, and MCP tools for different agents. Manually check recorded official Feishu versions and GitHub skill-directory changes. Unknown sources and pinned references are skipped, and local files are not overwritten automatically. TRAE supports global skills and native stdio/HTTP MCP configuration; task-level SSE uses a proxy.
 - **Remote control**: configure Feishu, intelligent conversations, and message history.
 - **Browser access**: independently enable the full web client and read-only mobile client. Disabling one leaves the other available; enabled access modes are restored after restart.
-- **Updates**: macOS update checks and downloads support system proxies and show download and installation progress. Manual and startup updates share progress across navigation. Failed checks offer a browser download link; Windows uses the latest installer in the browser.
+- **Updates**: macOS and Windows x64 support signed in-app updates with download and installation progress. Windows checks its own delivered-version manifest and exits into NSIS for installation; macOS supports system proxies and restarts after updating. Manual and startup updates share progress across navigation. Failures offer a browser download link.
 - **Maintenance**: updates, runtime environment, isolated copies, and service logs. Copy lists show directories still on disk, support grouping by task or project, search, rescanning, and task links. Recovery metadata stays in tasks; directories without recovery metadata are not cleaned up automatically.
 
 ### 13. Feishu remote collaboration

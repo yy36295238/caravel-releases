@@ -45,7 +45,7 @@ Explore apps, schedules, workflows, and more on the [website](https://caravel-si
 2. Prepare Git and at least one supported agent CLI, installed and signed in or configured.
 3. Add a local project, create a task, choose an agent, and start the run.
 
-Both platforms provide the complete Caravel app with all feature modules. macOS supports in-app updates; on Windows, download and run the new installer to update. Windows requires Git for Windows, Node.js, and an agent CLI. The Windows installer is not yet signed: if SmartScreen appears, verify that it came from this repository’s Releases, then choose “More info → Run anyway”. Tasks and conversations stay on your machine; online model calls and external integrations still use the network.
+Both platforms provide the complete Caravel app with all feature modules. macOS and Windows x64 support signed in-app updates. Older Windows clients need a manual upgrade to a version with automatic update support. Windows requires Git for Windows, Node.js, and an agent CLI. The Windows installer is not yet Authenticode-signed: if SmartScreen appears, verify that it came from this repository’s Releases, then choose “More info → Run anyway”. Tasks and conversations stay on your machine; online model calls and external integrations still use the network.
 
 <details>
 <summary><strong>First launch blocked on macOS? Use Open Anyway or Terminal</strong></summary>
