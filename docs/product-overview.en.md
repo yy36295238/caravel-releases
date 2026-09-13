@@ -46,7 +46,7 @@ Caravel turns these separate execution sessions into traceable tasks. Each task 
 Create and manage AI agent tasks with list, board, and split views.
 
 - Manage Claude Code, Codex, OpenCode, pi, Grok, and TRAE together.
-- Conversations, permissions, plans, subagent progress, code diffs, and delivery share one page.
+- Conversations, permissions, plans, subagent progress, code diffs, and delivery share one page. Drag the plan card within its conversation area, adjust it with arrow keys, or press Home to reset it.
 - Display live assistant replies smoothly as chunks arrive. History, synchronized records, and web polling snapshots appear in full; returning to the window skips queued background animation. Follow reasoning and tool activity exposed by the agent.
 - Choose a model and reasoning effort for a new task, a continuation, or a conversation fork. Defaults follow model settings. Manage models in Agent settings; historical tasks retain their existing model selection. Task headers show the latest known reasoning effort; continuations retain it without overwriting manual choices.
 - Scrolling toward the top loads earlier messages while preserving your reading position, including task quick previews and mobile task details.
@@ -142,7 +142,7 @@ Combine agent steps, commands, and human approval into repeatable processes.
 
 Assess effectiveness, cost, and opportunities to improve.
 
-- **Insights**: task efficiency, agent and model performance, tool usage, cost, permissions, and runtime health.
+- **Insights**: task efficiency, agent and model performance, tool usage, cost, permissions, and runtime health. Each visit defaults to Monday through today while retaining workspace, agent, and trend interval preferences.
 - Compare spending or tokens with the previous period; drill down by agent, model, workspace, or tag. The high-usage ranking aggregates runs by task within the current filters, with run details and a link to the original task.
 - View supported account quotas and reset times. TRAE weekly quota depends on its enterprise service; unavailable data shows an error or an older snapshot.
 - Inspect installation size, stored data, memory, and CPU usage per agent. TRAE storage covers CLI data and excludes other IDE data.
@@ -182,13 +182,13 @@ Manage preferences and the execution environment.
 - **Codex transport**: App Server is the default; saved CLI/ACP choices remain. Changes affect subsequent runs. App Server supports resume, fork, approval cards, input forms, and mid-run instructions; standard mode allows workspace writes with on-request approval, while plan mode is read-only. CLI has no live approvals or mid-run instructions, uses read-only standard/plan modes, and offers forks when supported by the installed version. Fast applies only to ACP.
 - **TRAE**: requires CLI 2.0 and an Enterprise Flagship account. Discover account models and reasoning efforts; use tasks, workflows, schedules, and AI assistance. Images, additional directories, forks, and mid-run instructions depend on CLI capabilities.
 - **Installation and tools**: install or upgrade agents and supporting tools such as Git, Node, and cc-switch. Upgrades retain the detected installation source and verify runnable versions. Progress, queues, and installer guidance remain visible across menu changes. Graphical installers require completion and a refresh; batch upgrades distinguish completed, manual, and failed results.
-- **Plugins**: manage Claude, Codex, OpenCode, and TRAE plugins and select them for tasks.
+- **Plugins**: manage Claude, Codex, OpenCode, and TRAE plugins and select them for tasks. Check stable updates for plugins with independent GitHub repositories against each agent’s installed version and open their release pages; installed files are not overwritten automatically.
 - **Terminal**: choose the default terminal for opening shells or taking over agent sessions.
-- **Appearance and language**: themes, task animations, and zoom. Choose Simplified Chinese, English, or system language. Desktop windows synchronize; browser and mobile clients store their own preference. The desktop app retains Chinese when unset. User content, code, and history stay in their original language.
+- **Appearance and language**: themes, task animations, and zoom at 80%, 90%, 100%, 110%, 125%, or 150% (100% by default). Choose Simplified Chinese, English, or system language. Desktop windows synchronize; browser and mobile clients store their own preference. The desktop app retains Chinese when unset. User content, code, and history stay in their original language.
 - **Language coverage**: workbench, Git, editor, databases, workflows, schedules, personal tools, insights, reviews, tray, fixed tool-window titles, notifications, and Feishu remote-control text. Built-in AI assistance defaults to the interface language and respects an explicitly requested language.
-- **Error recovery**: page, rendering, and startup failures show available reasons and stack traces for copying and feedback, with a reload option. The main window can return home; tool windows recover their current page. Action errors keep the interface visible with a dismissible notice. Rust panics save a local report and show its location and reason on the next launch; forced termination and native WebView crashes are outside this coverage. Save unsaved input before reloading.
+- **Error recovery**: page, rendering, and startup failures offer retry or reload. The main window can return home; tool windows recover their current page. Action errors keep the interface visible, with technical reasons and stack traces written to the service log instead of a global error notice. Rust panics save a local report that is silently archived on the next launch; forced termination and native WebView crashes are outside this coverage. Save unsaved input before reloading.
 - **Feature management**: show, hide, and reorder sidebar entries.
-- **Skills**: inspect skills and MCP tools for different agents. TRAE supports global skills and native stdio/HTTP MCP configuration; task-level SSE uses a proxy.
+- **Skills**: inspect skills, declared versions, and MCP tools for different agents. Manually check recorded official Feishu versions and GitHub skill-directory changes. Unknown sources and pinned references are skipped, and local files are not overwritten automatically. TRAE supports global skills and native stdio/HTTP MCP configuration; task-level SSE uses a proxy.
 - **Remote control**: configure Feishu, intelligent conversations, and message history.
 - **Browser access**: independently enable the full web client and read-only mobile client. Disabling one leaves the other available; enabled access modes are restored after restart.
 - **Updates**: macOS update checks and downloads support system proxies and show download and installation progress. Manual and startup updates share progress across navigation. Failed checks offer a browser download link; Windows uses the latest installer in the browser.
