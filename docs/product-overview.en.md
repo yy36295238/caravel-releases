@@ -56,6 +56,8 @@ The filter bar groups session sync, view, and split controls under “More actio
 - Long task descriptions can be summarized into short titles asynchronously by the selected agent and model. Execution continues; the original name remains while generation runs. Desktop, web, and mobile details show generation status. Full goals and manual names are preserved, and failure keeps the original name.
 - Link several workspaces to a task and view directly or indirectly related tasks.
 - Separate-branch tasks can create an isolated copy for each Git project, with per-project remote main/master baselines and development branches. Add projects, inspect connection status, browse files, and use Git from the task’s project panel.
+- Enter a separate branch name manually or generate it with the selected agent and model using the task, Jira ID, and specified skill rules. The same request generates a short task title for task creation and the copy directory. Edits made during generation are preserved; missing information can be supplied or names entered manually. The branch is created only after submission.
+- AI titles focus on the core action and subject. The task-name portion of separate-copy directories is limited to 20 characters; full task goals remain available.
 - Projects added during a run join the next run, or you can pause, attach, and continue. Multi-project execution requires agent or adapter support for additional working directories.
 - Copy conversation messages as text or images.
 - Startup and periodic checks reconcile running tasks and pending confirmations whose processes have exited. Explicitly interrupted tasks await continuation without restarting automatically. Codex/TRAE runs without current-turn records or a clear final state are marked as failed.
@@ -70,6 +72,7 @@ Keep and find historical tasks in one place.
 - Search sidebar workspaces by name or path. Matching groups expand temporarily; clearing the search restores their previous state.
 - Import and synchronize existing agent sessions, including native and officially migrated TRAE CLI 2.0 sessions. Codex supports both older and newer session formats. Rebuilding preserves image attachments and reply ratings; incomplete parsing or failed writes retain the original conversation while reconciling run status separately. Manual sync reports incomplete conversation updates; historical runs do not overwrite the current task status.
 - Open workspaces and manage Git branches, commits, pushes, and conflicts. Remove separate-branch entries even when their local copy is missing. Cleaned projects with missing directories are hidden while tasks and recovery information remain available.
+- Diffs default to full-file context when no preference is saved, and remember subsequent compact or full-file choices.
 - Commit only selected files while preserving unselected staged changes and tracked-file deletions. Task headers show the branch and changed-file count.
 - Pulling remote updates shows progress and keeps Git output, file and line-change statistics, up-to-date messages, or failure details visible until dismissed. Detected merge operations with conflicts can open the conflict resolver.
 - Choose a model and generate a commit message directly in the commit dialog, edit the draft, then commit or commit and push. Generated summaries use a type prefix by default and prioritize explicit formatting instructions. Additional instructions stay available when collapsed; search and reuse the latest 20 entries shared across repositories on this machine.
@@ -138,14 +141,14 @@ Combine agent steps, commands, and human approval into repeatable processes.
 - Use variables, automatic advancement, approval gates, retries, jumps, and cancellation.
 - Attach existing tasks to a workflow.
 - Extract a reusable workflow from a successful agent conversation.
-- Keep execution history for later review.
+- Keep execution history for later review. The workflow entry beside task status shows the current step and count. Open it to inspect steps, inputs, outputs, and run statistics or control execution in a popup that leaves conversation layout unchanged.
 - Search text within embedded workflow conversations, see match counts, and navigate between matches.
 
 ### 9. Insights and reviews
 
 Assess effectiveness, cost, and opportunities to improve.
 
-- **Insights**: task efficiency, agent and model performance, tool usage, cost, permissions, and runtime health. Each visit defaults to Monday through today while retaining workspace, agent, and trend interval preferences.
+- **Insights**: task efficiency, agent and model performance, tool usage, cost, permissions, and runtime health. Each visit opens Agent analysis → Cost and resources, with dates from Monday through today, while retaining workspace, agent, and trend interval preferences.
 - Compare spending or tokens with the previous period; drill down by agent, model, workspace, or tag. The high-usage ranking aggregates runs by task within the current filters, with run details and a link to the original task.
 - View supported account quotas and reset times. TRAE weekly quota depends on its enterprise service; unavailable data shows an error or an older snapshot.
 - Inspect installation size, stored data, memory, and CPU usage per agent. TRAE storage covers CLI data and excludes other IDE data.
