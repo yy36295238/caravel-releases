@@ -57,7 +57,7 @@ The filter bar groups session sync, view, and split controls under “More actio
 - Link several workspaces to a task and view directly or indirectly related tasks. Before creating a task, use the linked-workspace dialog to switch branches, commit, pull, and push in the primary and linked repositories; these operations affect the original workspace directories.
 - Separate-branch tasks can create an isolated copy for each Git project, with per-project remote main/master baselines and development branches. Add projects, inspect connection status, browse files, and use Git from the task’s project panel.
 - Enter a separate branch name manually or generate it with the selected agent and model using the task, Jira ID, and specified skill rules. The same request generates a short task title for task creation and the copy directory. Edits made during generation are preserved; missing information can be supplied or names entered manually. The branch is created only after submission.
-- AI titles focus on the core action and subject. The task-name portion of separate-copy directories is limited to 20 characters; full task goals remain available.
+- AI titles focus on the core action and subject. New separate-branch task and project directory names use only ASCII letters, digits, and `-_.`, falling back to `workspace` when empty and appending IDs to distinguish names. The task-name portion is limited to 20 characters; existing paths and full task goals remain available.
 - Projects added during a run join the next run, or you can pause, attach, and continue. Multi-project execution requires agent or adapter support for additional working directories.
 - Copy conversation messages as text or images.
 - Startup and periodic checks reconcile running tasks and pending confirmations whose processes have exited. Explicitly interrupted tasks await continuation without restarting automatically. Codex/TRAE runs without current-turn records or a clear final state are marked as failed.
@@ -97,7 +97,7 @@ Automate work that runs daily, weekly, at intervals, or just once.
 Browse, search, and edit project files.
 
 - Multiple tabs, syntax highlighting, and autosave.
-- Markdown, Mermaid, and image previews; open pasted file or directory paths.
+- Markdown (including embedded SVG images), Mermaid, and image previews; open pasted file or directory paths.
 - Inspect, locate, and revert changes relative to the last commit, including image comparisons in diffs.
 - Copy full paths, open complete diffs, and use common Git actions from file previews. Collapse directories in the diff file tree.
 - Open the current directory in an installed external editor and remember that preference. Supported locations include the main workspace, linked directories, and isolated copies.
@@ -172,7 +172,7 @@ Agents can execute independently while you retain control over key permissions a
 
 - Work in isolated copies to avoid directly changing the original project.
 - Inspect branch changes, browse copy files, and safely remove local copies from the workspace.
-- Clean up completed, safe copies from Settings while keeping tasks and remote branches available for continuation.
+- Clean up completed, safe copies from the Copy Library while keeping tasks and remote branches available for continuation.
 - Review changes across repositories in multi-project tasks, then commit and push individually or together. Partial push failures retain successful results; uncommitted or unpushed work still needs review.
 - Unlinking a project stops its participation in future runs but preserves its copy and results. Deleting a separate-branch task also keeps its copies; newer copies can start a new task and conversation through Continue Development.
 - Before cleaning up a project copy, check uncommitted files and remote commit state and keep recovery information. Resume at the original path. If the remote result branch was deleted, show that explicitly; after cleanup, a new branch can be created from the mainline.
@@ -194,12 +194,13 @@ Manage preferences and the execution environment.
 - **Appearance and language**: themes, task animations, and zoom at 80%, 90%, 100%, 110%, 125%, or 150% (100% by default). Choose Simplified Chinese, English, or system language. Desktop windows synchronize; browser and mobile clients store their own preference. The desktop app retains Chinese when unset. User content, code, and history stay in their original language.
 - **Language coverage**: workbench, Git, editor, databases, workflows, schedules, personal tools, insights, reviews, tray, fixed tool-window titles, notifications, and Feishu remote-control text. Built-in AI assistance defaults to the interface language and respects an explicitly requested language.
 - **Error recovery**: page, rendering, and startup failures offer retry or reload. The main window can return home; tool windows recover their current page. Action errors keep the interface visible, with technical reasons and stack traces written to the service log instead of a global error notice. Rust panics save a local report that is silently archived on the next launch; forced termination and native WebView crashes are outside this coverage. Save unsaved input before reloading.
-- **Feature management**: show, hide, and reorder sidebar entries.
+- **Feature management**: show, hide, and reorder sidebar entries. Insights is enabled by default; Copy Library is disabled by default.
 - **Skills**: inspect skills, declared versions, and MCP tools for different agents. Manually check recorded official Feishu versions and GitHub skill-directory changes. Unknown sources and pinned references are skipped, and local files are not overwritten automatically. TRAE supports global skills and native stdio/HTTP MCP configuration; task-level SSE uses a proxy.
 - **Remote control**: configure Feishu, intelligent conversations, and message history.
 - **Browser access**: independently enable the full web client and read-only mobile client. Disabling one leaves the other available; enabled access modes are restored after restart.
 - **Updates**: macOS and Windows x64 support signed in-app updates with download and installation progress. Windows checks its own delivered-version manifest and exits into NSIS for installation; macOS supports system proxies and restarts after updating. Manual and startup updates share progress across navigation. Failures offer a browser download link.
-- **Maintenance**: updates, runtime environment, isolated copies, and service logs. Copy lists show directories still on disk, support grouping by task or project, search, rescanning, and task links. Recovery metadata stays in tasks; directories without recovery metadata are not cleaned up automatically.
+- **Maintenance**: updates, runtime environment, and service logs.
+- **Copy Library**: a separate sidebar entry, disabled by default and configurable in feature management. Lists copies still on disk, grouped by task by default or optionally by project, with workspace names and task tags. Search, rescan, open the owning task, or safely clean up copies. Recovery metadata stays in tasks; directories without recovery metadata are not cleaned up automatically.
 
 ### 13. Feishu remote collaboration
 
