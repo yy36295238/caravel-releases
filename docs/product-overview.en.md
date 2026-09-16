@@ -75,7 +75,7 @@ Keep and find historical tasks in one place.
 - Diffs default to full-file context when no preference is saved, and remember subsequent compact or full-file choices.
 - Commit only selected files while preserving unselected staged changes and tracked-file deletions. Task headers show the branch and changed-file count.
 - Pulling remote updates shows progress and keeps Git output, file and line-change statistics, up-to-date messages, or failure details visible until dismissed. Detected merge operations with conflicts can open the conflict resolver.
-- Choose a model and generate a commit message directly in the commit dialog, edit the draft, then commit or commit and push. Generated summaries use a type prefix by default and prioritize explicit formatting instructions. Additional instructions stay available when collapsed; search and reuse the latest 20 entries shared across repositories on this machine.
+- Choose a model and generate a commit message directly in the commit dialog, edit the draft, then commit or commit and push. Generated summaries use a type prefix by default and prioritize explicit formatting instructions. Additional instructions stay available when collapsed; search and reuse the latest 20 entries shared across repositories on this machine, or delete individual entries without changing the current input.
 
 ### 3. Schedules
 
@@ -101,6 +101,8 @@ Browse, search, and edit project files.
 - Inspect, locate, and revert changes relative to the last commit, including image comparisons in diffs.
 - Copy full paths, open complete diffs, and use common Git actions from file previews. Collapse directories in the diff file tree.
 - Open the current directory in an installed external editor and remember that preference. Supported locations include the main workspace, linked directories, and isolated copies.
+
+- HTML file quick previews render the webpage by default and can switch to read-only source; line references open source first. Inline styles, scripts, and data resources work in isolation, without loading neighboring files or remote resources.
 
 ### 5. Databases
 
@@ -163,6 +165,7 @@ Keep personal tools inside the workbench.
 - Describe a small tool and have AI build it, such as a daily report helper or dashboard.
 - Add a website or local webpage as a linked app and open it in a window.
 - Apps can fetch data, access selected files, send notifications, or view tasks after requesting the corresponding permissions.
+- With AI permission, apps can independently choose installed, enabled agents and their models for questions, structured generation, and streaming, using an embedded version of the host picker. Omitting the agent follows the global default; unavailable selections require a new choice instead of silently switching agents.
 - Private storage and database access require authorization. Cross-database file access, query duration, concurrency, and result size are limited. Network redirects across origins require a new authorized request; oversized responses are truncated.
 - Improve apps, save versions, and export them to share.
 
@@ -171,7 +174,7 @@ Keep personal tools inside the workbench.
 Agents can execute independently while you retain control over key permissions and final changes.
 
 - Work in isolated copies to avoid directly changing the original project.
-- Inspect branch changes, browse copy files, and safely remove local copies from the workspace.
+- Inspect branch changes, browse copy files, and safely remove local copies from the workspace. Commit and push through the project Git menu; separate-branch delivery and discard buttons are no longer shown in the task header.
 - Clean up completed, safe copies from the Copy Library while keeping tasks and remote branches available for continuation.
 - Review changes across repositories in multi-project tasks, then commit and push individually or together. Partial push failures retain successful results; uncommitted or unpushed work still needs review.
 - Unlinking a project stops its participation in future runs but preserves its copy and results. Deleting a separate-branch task also keeps its copies; newer copies can start a new task and conversation through Continue Development.
@@ -185,9 +188,9 @@ Agents can execute independently while you retain control over key permissions a
 Manage preferences and the execution environment.
 
 - **Agents**: choose agents, models, permissions, and defaults. CLI model discovery marks existing models it did not find, allowing bulk removal and saving.
-- **Codex transport**: App Server is the default; saved CLI/ACP choices remain. Changes affect subsequent runs. App Server supports resume, fork, approval cards, input forms, and mid-run instructions; standard mode allows workspace writes with on-request approval, while plan mode is read-only. CLI has no live approvals or mid-run instructions, uses read-only standard/plan modes, and offers forks when supported by the installed version. Fast applies only to ACP.
+- **Codex transport**: App Server is the default; saved CLI/ACP choices remain. Changes affect subsequent runs. App Server supports resume, fork, approval cards, input forms, and mid-run instructions. Asynchronous questions let the agent keep working and remain available after the turn ends; answers continue with the original permissions. Forms stay until the driver confirms submission, prevent duplicate submissions, and remain available for retry after failure. Standard mode allows workspace writes with on-request approval, while plan mode is read-only. CLI has no live approvals or mid-run instructions, uses read-only standard/plan modes, and offers forks when supported by the installed version. Fast applies only to ACP.
 - **TRAE**: requires CLI 2.0 and an Enterprise Flagship account. Discover account models and reasoning efforts; use tasks, workflows, schedules, and AI assistance. Images, additional directories, forks, and mid-run instructions depend on CLI capabilities.
-- **Installation and tools**: install or upgrade agents and supporting tools such as Git, Node, and cc-switch. Upgrades retain the detected installation source and verify runnable versions. Progress, queues, and installer guidance remain visible across menu changes. Graphical installers require completion and a refresh; batch upgrades distinguish completed, manual, and failed results. On macOS, Homebrew installs and upgrades of CC Switch first cache the matching package from its official mirror and verify its SHA-256; unavailable mirrors fall back to Homebrew downloads.
+- **Installation and tools**: install or upgrade agents and supporting tools such as Git, Node, and cc-switch. Upgrades retain the detected installation source and verify runnable versions. Installation stages include clearly labeled estimated percentages, which do not represent download progress or remaining time. Batch progress reflects processed items; progress, queues, and installer guidance remain visible across menu changes. Graphical installers require completion and a refresh; batch upgrades distinguish completed, manual, and failed results. On macOS, Homebrew installs and upgrades of CC Switch first cache the matching package from its official mirror and verify its SHA-256; unavailable mirrors fall back to Homebrew downloads.
 - **Plugins**: manage Claude, Codex, OpenCode, and TRAE plugins and select them for tasks. Check stable updates for plugins with independent GitHub repositories against each agent’s installed version and open their release pages; installed files are not overwritten automatically.
 - **Terminal**: choose the default terminal for opening shells or taking over agent sessions.
 - **macOS main window**: content extends to the top while retaining native window buttons. Drag page title bars or empty areas of the workbench filter bar and sidebar to move the window; double-click to toggle maximization. Native background and appearance follow the app theme.
