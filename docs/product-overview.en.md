@@ -49,7 +49,7 @@ The filter bar groups session sync, view, and split controls under “More actio
 
 - Manage Claude Code, Codex, OpenCode, pi, Grok, and TRAE together.
 - Conversations, permissions, plans, subagent progress, code diffs, and delivery share one page. Drag the plan card within its conversation area, adjust it with arrow keys, or press Home to reset it.
-- Display live assistant replies smoothly as chunks arrive. History, synchronized records, and web polling snapshots appear in full; returning to the window skips queued background animation. Follow reasoning and tool activity exposed by the agent.
+- Display live assistant text frame by frame at 300 characters per second, with finalized replies appearing in full immediately. History, synchronized records, and web polling snapshots appear in full; returning to the window skips queued background animation. Follow reasoning and tool activity exposed by the agent.
 - Choose a model and reasoning effort for a new task, a continuation, or a conversation fork. Defaults follow model settings. Manage models in Agent settings; historical tasks retain their existing model selection. Task headers show the latest known reasoning effort; continuations retain it without overwriting manual choices.
 - Scrolling toward the top loads earlier messages while preserving your reading position, including task quick previews and mobile task details.
 - Task turn counts and active time cover the full conversation, independently of message pagination. Active time excludes idle waits for input between turns.
@@ -61,7 +61,9 @@ The filter bar groups session sync, view, and split controls under “More actio
 - Projects added during a run join the next run, or you can pause, attach, and continue. Multi-project execution requires agent or adapter support for additional working directories.
 - Copy conversation messages as text or images.
 - Startup and periodic checks reconcile running tasks and pending confirmations whose processes have exited. Explicitly interrupted tasks await continuation without restarting automatically. Codex/TRAE runs without current-turn records or a clear final state are marked as failed.
-- Stop a task at any time or take over in a terminal.
+- Repeated continuation requests replace the previous run and its pending questions, waiting for its process to exit before restoring the conversation. Requests for one task are handled in arrival order; different tasks can still run in parallel.
+- Copy files from Finder or File Explorer and paste them as attachments when creating tasks or continuing conversations, preserving filenames and removing duplicate paths. Workflows, to-dos, and inbox notes share the same attachment support.
+- Stop a task at any time or take over in a terminal. Stopping reclaims processes for all unfinished runs of that task and reports an error if a process cannot exit.
 
 ### 2. Task library
 
