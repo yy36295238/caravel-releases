@@ -124,6 +124,8 @@ Stable methods can become predictable local execution.
 
 A global shortcut opens quick entry for to-dos, new tasks, or inbox notes. To-dos can include tags, subtasks, images, and attachments, then become AI tasks and follow their completion.
 
+Enable Sessions to discuss requirements, develop ideas, and continue working with an agent without first choosing a project. Conversations share a fixed workspace, stay separate from project tasks, and support search, tags, and pinning.
+
 The clipboard keeps text, code, JSON, and image history. My apps turns a concrete request into a report helper, dashboard, or personal tool.
 
 Keep the path from a captured idea to an agent task within one workspace.

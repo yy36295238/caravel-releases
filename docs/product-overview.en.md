@@ -47,7 +47,7 @@ Create and manage AI agent tasks with list, board, and split views.
 
 The filter bar groups session sync, view, and split controls under “More actions” when space is limited. In list view, press `⌘F` (`Ctrl+F` on Windows/Linux) to search the current conversation, see match counts, and navigate with `Enter / Shift+Enter`. Press `Esc` to close and clear highlights. Split views search the focused conversation; embedded workflow conversations support the same controls.
 
-- Manage Claude Code, Codex, OpenCode, pi, Grok, and TRAE together.
+- Manage Claude Code, Codex, OpenCode, pi, Grok, and TRAE together. Invocation controls combine a brand icon, agent dropdown, and model selection; Settings retains full enablement controls.
 - Conversations, permissions, plans, subagent progress, code diffs, and delivery share one page. Drag the plan card within its conversation area, adjust it with arrow keys, or press Home to reset it.
 - Play each completed assistant reply continuously at a speed adapted to its length. Reasoning and tool activity remain live while waiting for the full reply. History, synchronized records, and web polling snapshots appear in full; returning to the window shows finalized text immediately.
 - Image links in completed desktop replies become thumbnails that open enlarged previews. Switch chat SVG images between preview and read-only source, with text selection and copying.
@@ -65,8 +65,16 @@ The filter bar groups session sync, view, and split controls under “More actio
 - Mark mistakenly sent user messages as deleted on desktop and the full web interface using the delete icon and confirmation dialog; canceling submits nothing. Keep struck-through text and submit one correction asking the agent to ignore the message and attachments and await further input. Stop running tasks first. Marks survive history sync and appear read-only on mobile; native history and completed actions are not undone.
 - Startup and periodic checks reconcile running tasks and pending confirmations whose processes have exited. Explicitly interrupted tasks await continuation without restarting automatically. Codex/TRAE runs without current-turn records or a clear final state are marked as failed.
 - Repeated continuation requests replace the previous run and its pending questions, waiting for its process to exit before restoring the conversation. Requests for one task are handled in arrival order; different tasks can still run in parallel.
-- Copy files from Finder or File Explorer and paste them as attachments when creating tasks or continuing conversations, preserving filenames and removing duplicate paths. Workflows, to-dos, and inbox notes share the same attachment support.
+- Copy files from Finder or File Explorer and paste them as attachments when creating tasks or continuing conversations, preserving filenames and removing duplicate paths. Workflows, to-dos, and inbox notes share the same attachment support. Desktop context menus paste text, images, and files into the active input area without sending attachments to another pane or dialog.
 - Stop a task at any time or take over in a terminal. Stopping reclaims processes for all unfinished runs of that task and reports an error if a process cannot exit.
+
+#### Sessions
+
+Enable Sessions in Settings → Features; it is off by default. Start a conversation without first choosing a project. Sessions share a fixed workspace directory and appear separately from regular tasks in Workbench and Tasks. Turning off the entry preserves history.
+
+- Sending the first message creates a session. Choose an agent, model, reasoning effort, permissions, attachments, skills, and task references, with a separate draft for new sessions.
+- Search by keyword, date, and tags, showing today by default. Pin, favorite, tag, open historical links, or delete with confirmation.
+- Follow streaming conversations, handle permissions, stop and continue runs, and view usage, cost, duration, and turns. Resize the list or switch between list and conversation in narrow windows.
 
 ### 2. Task library
 
@@ -108,7 +116,7 @@ Browse, search, and edit project files.
 - Copy full paths, open complete diffs, and use common Git actions from file previews. Collapse directories in the diff file tree.
 - Open the current directory in an installed external editor and remember that preference. Supported locations include the main workspace, linked directories, and isolated copies.
 
-- HTML file quick previews render the webpage by default and can switch to read-only source; line references open source first. Inline styles, scripts, and data resources work in isolation, without loading neighboring files or remote resources.
+- HTML file quick previews render the webpage by default and can switch to read-only source; line references open source first. Inline styles, scripts, and data resources work in isolation. Desktop previews also load CSS, JavaScript, images, fonts, and media from the current directory and subdirectories, up to 20 MiB per resource. Switching or closing the preview revokes access. Host permissions remain isolated; resources outside the directory, remote resources, and API requests are blocked. Browser previews support inline resources only.
 
 ### 5. Databases
 
@@ -147,6 +155,7 @@ Combine agent steps, commands, and human approval into repeatable processes.
 
 - Assign roles, models, skills, and requirements to individual steps.
 - Use variables, automatic advancement, approval gates, retries, jumps, and cancellation. Reset any step of a stopped workflow, including its current step, while retaining the task and code. Confirmation opens the target step; click “Start this step” to resume execution.
+- Rerun the current paused agent step or one awaiting completion confirmation using its configuration. Retain the task, existing code, and other steps while replacing this step’s output; running steps cannot be started again.
 - Attach existing tasks to a workflow.
 - Extract a reusable workflow from a successful agent conversation.
 - Keep execution history for later review. The workflow entry beside task status shows the current step and count. Open it to inspect steps, inputs, outputs, and run statistics or control execution in a popup that leaves conversation layout unchanged.
@@ -208,6 +217,7 @@ Manage preferences and the execution environment.
 - **Remote control**: configure Feishu, intelligent conversations, and message history.
 - **Browser access**: independently enable the full web client and read-only mobile client. Disabling one leaves the other available; enabled access modes are restored after restart.
 - **Updates**: macOS and Windows x64 support signed in-app updates with download and installation progress. Windows checks its own delivered-version manifest and exits into NSIS for installation; macOS supports system proxies and restarts after updating. Manual and startup updates share progress across navigation. Failures offer a browser download link.
+- **Development instance**: run the development and installed apps side by side, each with its own single instance, application data, and service ports. DEV icons and window/tray labels distinguish them. Agent logins, tool configuration, and explicitly selected working directories remain shared.
 - **Maintenance**: updates, runtime environment, and service logs.
 - **Copy Library**: a separate sidebar entry, disabled by default and configurable in feature management. Lists copies still on disk, grouped by task by default or optionally by project, with workspace names and task tags. Search, rescan, open the owning task, or safely clean up copies. Recovery metadata stays in tasks; directories without recovery metadata are not cleaned up automatically.
 
