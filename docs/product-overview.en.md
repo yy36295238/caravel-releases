@@ -178,9 +178,15 @@ Assess effectiveness, cost, and opportunities to improve.
 Keep personal tools inside the workbench.
 
 - Describe a small tool and have AI build it, such as a daily report helper or dashboard.
+- Choose Follow Caravel or Independent design when creating or refining an app: use the host theme or custom colors, typography, layout, and controls. Each app saves its preference for the next generation or refinement; existing pages are not restyled immediately.
 - Add a website or local webpage as a linked app and open it in a window.
 - Apps can fetch data, access selected files, send notifications, or view tasks after requesting the corresponding permissions.
-- With AI permission, apps can independently choose installed, enabled agents and their models for questions, structured generation, and streaming, using an embedded version of the host picker. Omitting the agent follows the global default; unavailable selections require a new choice instead of silently switching agents.
+- With AI permission, apps can independently choose installed, enabled agents and their models for questions, structured generation, and streaming, using custom controls or the optional host picker. Omitting the agent follows the global default; unavailable selections require a new choice instead of silently switching agents.
+- Authorized desktop apps can run local programs or bundled scripts, read output, send input, and manage ongoing tasks. They can inspect system information, processes, and a selected process's TCP listening ports, with separate permission to request a graceful stop or force termination.
+- File and directory access uses separate read and write scopes, supporting listing, creation, moves, permanent deletion, text and binary data, chunked reads, and atomic replacement writes. Local communication is authorized by loopback address and port or Unix Socket path.
+- Local permissions can last for the current session or be remembered, and can be revoked individually in app settings. Installation does not grant local access, exported apps do not include these permissions, and web and mobile remote access do not expose these interfaces.
+- Program execution has the current user's privileges and is not restricted by file or communication scopes; it is not a process sandbox. Closing, refreshing, or revoking execution permission cleans up directly launched session processes, excluding descendants. Generic graceful stops and Unix Socket access are unsupported on Windows.
+- Card, compact, and list views show actual generation, refinement, confirmation, interruption, and ready-to-install states; uninstalled drafts no longer remain marked as generating.
 - Private storage and database access require authorization. Cross-database file access, query duration, concurrency, and result size are limited. Network redirects across origins require a new authorized request; oversized responses are truncated.
 - Improve apps, save versions, and export them to share.
 

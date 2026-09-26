@@ -128,6 +128,8 @@ Enable Sessions to discuss requirements, develop ideas, and continue working wit
 
 The clipboard keeps text, code, JSON, and image history. My apps turns a concrete request into a report helper, dashboard, or personal tool.
 
+With permission, desktop apps can connect local scripts, files, processes, and services into reusable tools. Their appearance can follow Caravel or use an independent design. Local permissions can be remembered and revoked by scope; program execution has the current user's privileges and should only be granted to trusted apps, as it is not a process sandbox.
+
 Keep the path from a captured idea to an agent task within one workspace.
 
 ## 8. Keep your data and decisions under your control
